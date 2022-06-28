@@ -10,19 +10,19 @@ interface LessonProps {
   type: "live" | "class";
 }
 
-export function Lesson({ title, slug, availableAt, type }: LessonProps) {
-  const { var_slug } = useParams<{ var_slug: string }>();
-  const isLessonAvailable = isPast(availableAt);
+export function Lesson(props: LessonProps) {
+  const { slug } = useParams<{ slug: string }>();
+  const isLessonAvailable = isPast(props.availableAt);
   const availableDateFormatted = format(
-    availableAt,
+    props.availableAt,
     "EEEE' • 'd' de 'MMMM' • 'k'h'mm",
     { locale: ptBR }
   );
 
-  const isActiveLesson = var_slug === slug;
+  const isActiveLesson = slug === props.slug;
 
   return (
-    <Link to={`/event/lesson/${slug}`} className="group">
+    <Link to={`/event/lesson/${props.slug}`} className="group">
       <span className="text-gray-300">{availableDateFormatted}</span>
       <div
         className={classNames(
@@ -59,7 +59,7 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
               }
             )}
           >
-            {type === "live" ? "AO VIVO" : "AULA PRÁTICA"}
+            {props.type === "live" ? "AO VIVO" : "AULA PRÁTICA"}
           </span>
         </header>
         <strong
@@ -68,7 +68,7 @@ export function Lesson({ title, slug, availableAt, type }: LessonProps) {
             "text-gray-200": !isActiveLesson,
           })}
         >
-          {title}
+          {props.title}
         </strong>
       </div>
     </Link>
