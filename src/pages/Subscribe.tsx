@@ -33,8 +33,8 @@ export function Subscribe() {
           <Logo />
 
           <h1 className="mt-8 text-[2.5rem] leading-tight">
-            Construa uma{" "}
-            <strong className="text-blue-500">aplicação completa</strong>, do
+            Construa uma
+            <strong className="text-blue-500"> aplicação completa</strong>, do
             zero, com <strong className="text-blue-500">React</strong>
           </h1>
           <p className="mt-4 text-gray-200 leading-relaxed">
