@@ -70,6 +70,15 @@ export function Subscribe() {
             >
               Garantir minha vaga
             </button>
+            <p className="text-xs text-gray-200 mx-auto mt-3">
+              Já tem uma conta?
+            </p>
+            <a
+              href="/login"
+              className="mx-auto text-sm text-blue-500 uppercase"
+            >
+              Login
+            </a>
           </form>
         </div>
       </div>
